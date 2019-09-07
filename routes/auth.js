@@ -7,11 +7,12 @@ router.post('/register', (req, res, next) => {
 });
 
 router.post('/login', (req, res, next) => {
+  const secret = 'c2VjcmV0';
   const uuid = uuidv1();
   const token = jwt.sign({
     id: uuid,
     text: 'blabla'
-  }, 'secret'); // generate token
+  }, secret); // generate token
 
   // instead of blabla there should be some data or something
 
